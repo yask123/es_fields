@@ -1,8 +1,5 @@
 # EsFields
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/es_fields`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Provides an idiomatic way to generate elastic search fields mappings.
 
 ## Installation
 
@@ -22,7 +19,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+  mapping do
+    field :name, :string
+    field :age, :long
+  end
+```
+This will generate ElasticSearch field mappings and return a
+Hash which can be used with ElasticSearch API to add fields to an existing index.
 
 ## Development
 
