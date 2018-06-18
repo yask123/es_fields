@@ -10,6 +10,7 @@ RSpec.describe EsFields do
       field_mapping = mapping do
         field :name, :string
         field :age, :long
+        field :email, :keyword
       end
 
       expect(field_mapping).to eq(
@@ -17,8 +18,9 @@ RSpec.describe EsFields do
           "mappings": {
             "doc": {
               "properties": {
-                "name":    { "type": "text"  },
-                "age":      { "type": "long" },
+                "name": { "type": "text"  },
+                "age": { "type": "long" },
+                "email": { "type": "keyword"},
               }
             }
           }
