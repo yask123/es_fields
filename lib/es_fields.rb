@@ -20,7 +20,12 @@ class Fields
 
   TYPE_MAPPING = {
     string: 'text',
-    long: 'long'
+    long: 'long',
+    date: 'date',
+    keyword: 'keyword',
+    double: 'double',
+    boolean: 'boolean',
+    ip: 'ip',
   }
 
   def initialize
