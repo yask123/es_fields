@@ -1,5 +1,5 @@
 # EsFields
-Provides an idiomatic way to generate elastic search fields mappings.
+Provides an idiomatic way to generate elastic search field mappings.
 
 ## Installation
 
@@ -23,6 +23,7 @@ Or install it yourself as:
   mapping do
     field :name, :string
     field :age, :long
+    field :email, :keyword
   end
 ```
 This will generate ElasticSearch field mappings and return a
