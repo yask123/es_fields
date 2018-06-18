@@ -19,13 +19,24 @@ class Fields
     ip: 'ip',
   }
 
+  OPTIONS_MAPPING = {
+    sortable: 'keyword',
+    full_text_search: 'text',
+    aggregation: 'keyword',
+    filtering: 'keyword',
+  }
+
   def initialize
     @base_mapping = BASE_MAPPING.dup
   end
 
-  def field(name, type)
+  def field(name, type, options: [])
     @base_mapping[:mappings][:doc][:properties].merge!(
-      { name => { type: TYPE_MAPPING[type]}}
+      {
+        name => {
+          type: options.empty? ? TYPE_MAPPING[type] : OPTIONS_MAPPING[options.first]
+        }
+      }
     )
     @base_mapping
   end

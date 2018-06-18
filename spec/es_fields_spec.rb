@@ -8,9 +8,9 @@ RSpec.describe EsFields do
 
     it 'can generate string and number fields' do
       field_mapping = mapping do
-        field :name, :string
+        field :name, :string, options: [:full_text_search]
         field :age, :long
-        field :email, :keyword
+        field :email, :string, options: [:filtering]
       end
 
       expect(field_mapping).to eq(
