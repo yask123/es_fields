@@ -21,9 +21,9 @@ Or install it yourself as:
 
 ```ruby
   mapping do
-    field :name, :string
+    field :name, :string, options: [:full_text_search]
     field :age, :long
-    field :email, :keyword
+    field :email, :string, options: [:filtering]
   end
 ```
 This will return a Hash which can be used with ElasticSearch API to add fields to an existing index.
