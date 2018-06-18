@@ -26,8 +26,7 @@ Or install it yourself as:
     field :email, :keyword
   end
 ```
-This will generate ElasticSearch field mappings and return a
-Hash which can be used with ElasticSearch API to add fields to an existing index.
+This will return a Hash which can be used with ElasticSearch API to add fields to an existing index.
 
 ## Development
 
